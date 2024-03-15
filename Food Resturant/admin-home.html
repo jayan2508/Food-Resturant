@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Home Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="admin-home.css">
+    <link rel="stylesheet" href="view-order-list.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand">Restaurant App</a>
+        <button class="btn btn-logout" id="logout">Logout</button>
+    </nav>
+    <img src="back-1.jpg" alt="" class="back-img">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="welcome-text">Welcome to Food Restaurant</p>
+                <button class="btn" id="openModalBtn">Create Restaurant</button>
+                <button class="btn" id="list">View Order List</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="orderList" class="order-list">
+        <!-- The order list cards will be dynamically added here using JavaScript -->
+    </div>
+
+    <div id="dataNotFound" style="display: none;">
+        <p>Data not found.</p>
+    </div>
+
+    <div class="modal" id="messageModal">
+        <div class="modal-dialog">
+            <div class="modal-content" id="messageModal-1">
+                <div class="modal-header">
+                    <h4 class="modal-title">Message</h4>
+                </div>
+                <div class="modal-body-1" id="messageContent">
+                    <!-- Message content will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="confirmButton">Confirm</button>
+                    <button type="button" class="btn btn-secondary" id="closeMessageButton">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add a modal for restaurant creation -->
+    <div class="modal" id="createRestaurantModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Restaurant</h5>
+                    <span id="closeSearch" class="close-search close">
+                        <div class="close-container">
+                            <div class="leftright"></div>
+                            <div class="rightleft"></div>
+                        </div>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    <form id="restaurantForm">
+                        <div class="form-group form-group1">
+                            <label for="restaurantName">Restaurant Name<span class="required">*</span></label>
+                            <input type="text" class="form-control" id="restaurantName" required>
+                            <p id="nameError" class="error-message"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="foodType">Food Type</label>
+                            <select class="form-control" id="foodType">
+                                <option value="Punjabi">Punjabi</option>
+                                <option value="Chinese">Chinese</option>
+                                <option value="SouthIndian">South Indian</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="foodItems">Food Items</label>
+                            <select class="form-control" id="foodItems">
+                                <!-- Food items will be populated dynamically based on the selected food type -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price<span class="required">*</span></label>
+                            <input type="number" class="form-control" id="price" name="price" placeholder="Enter price">
+                            <p id="priceError" class="error-message"></p>
+                        </div>
+                        <button type="button" class="btn" id="saveRestaurantBtn">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-home.js"></script>
+</body>
+
+</html>

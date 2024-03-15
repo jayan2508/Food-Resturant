@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create-your-order page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="create-your-order.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">Restaurant</a>
+        <button class="btn btn-danger ml-auto" id="logoutButton">Logout</button>
+        <div class="shopping-cart-container">
+            <img src="shopping-cart.png" alt="" class="shopping-cart" id="shoppingCartIcon">
+            <span class="badge" id="cartItemCount">0</span>
+        </div>
+    </nav>
+    <img src="back-9.jpg" alt="" class="back-img">
+    <!-- Add the filter options -->
+    <div class="filters">
+        <div>
+            <label for="priceFilter">Price:</label>
+            <select id="priceFilter">
+                <option value="lowToHigh">Low to High</option>
+                <option value="highToLow">High to Low</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="restaurantNameFilter">Restaurant:</label>
+            <select id="restaurantNameFilter">
+                <option value="all">All Restaurants</option>
+                <!-- Add restaurant names dynamically using JavaScript -->
+            </select>
+        </div>
+
+        <div>
+            <label for="foodTypeFilter">Food Type:</label>
+            <select id="foodTypeFilter">
+                <option value="all">All Food Types</option>
+                <option value="Punjabi">Punjabi</option>
+                <option value="Chinese">Chinese</option>
+                <option value="SouthIndian">South Indian</option>
+            </select>
+        </div>
+        <div class="reset">
+            <button id="resetFiltersButton">Reset</button>
+        </div>
+    </div>
+
+
+    <div id="orderList" class="order-list">
+        <!-- The order list cards will be dynamically added here using JavaScript -->
+    </div>
+
+    <div id="dataNotFound" style="display: none;">
+        <p>Data not found.</p>
+    </div>
+
+    <div class="modal" id="orderModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Your Purchased Foods</h4>
+                    <span id="close" class="close-search close">
+                        <div class="close-container">
+                            <div class="leftright"></div>
+                            <div class="rightleft"></div>
+                        </div>
+                    </span>
+                </div>
+                <div class="modal-body" id="modalContent">
+                    <!-- Purchased items will be displayed here using JavaScript -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="closeButton">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="purchasedItemTemplate" style="display: none;">
+        <div class="restaurant-card-1">
+            <img class="purchased-item-image" alt="">
+            <p class="purchased-item-food-item"></p>
+            <p class="purchased-item-food-type"></p>
+            <p class="purchased-item-price"></p>
+            <p class="purchased-item-name"></p>
+        </div>
+    </div>
+
+    <div class="modal" id="messageModal">
+        <div class="modal-dialog">
+            <div class="modal-content" id="messageModal-1">
+                <div class="modal-header">
+                    <h4 class="modal-title">Message</h4>
+                </div>
+                <div class="modal-body-1" id="messageContent">
+                    <!-- Message content will be displayed here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="confirmButton">Confirm</button>
+                    <button type="button" class="btn btn-danger" id="closeMessageButton">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="create-your-order.js"></script>
+</body>
+
+</html>
